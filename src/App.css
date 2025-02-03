@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  background-color: #0B2434;
+  font-family: "Inter", serif;
+  justify-content: center;
+  align-items: center;
+}
+
+main{
+  width: 90vw;
+  height: 90vh;
+  background-color: #F5F5F5;
+  border-radius: 10px;
+  max-width: 320px;
+  max-height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
