@@ -1,12 +1,12 @@
 import React from "react"
-
 import './App.css'
 import Die from "./Die"
 
 function App() {
   
   // initial dice state
-  const [diceArray, setDiceArray] = React.useState(generatePlayingDice())
+  const [diceArray, setDiceArray] = React.useState(()=> generatePlayingDice())
+ 
 
   
   // generate full array of 10 dice
