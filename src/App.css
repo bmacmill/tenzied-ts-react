@@ -24,5 +24,20 @@ main {
   background-color: #F5F5F5;
   height: 100%;
   border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   
 }
+
+.Die-container{
+  display: grid;
+  gap: 20px;
+  /* grid-template-columns:repeat(5, 1fr);
+  grid-template-rows: repeat(2); */
+  /* easier way to do above */
+  grid-template: auto auto / repeat(5, 1fr);
+  gap: 20px;
+}
+
+
