@@ -21,13 +21,18 @@ function App() {
   return <Die key={i} number={num} />
 })
 
-
+function handleClick(){
+  setDiceArray(prevState => prevState = generatePlayingDice())
+}
 
   return (   
       <main>
         <div className="Die-container">
           {diceElements}
-        </div>
+         </div>
+     
+        <button className="Roll-btn" onClick={handleClick}>Roll</button>
+    
       </main>
 
   )
