@@ -2,23 +2,27 @@
   box-sizing: border-box;
 }
 
-body{
-  display: flex;
+body {
+  margin: 0;
   background-color: #0B2434;
-  font-family: "Inter", serif;
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-main{
-  width: 90vw;
-  height: 90vh;
-  background-color: #F5F5F5;
-  border-radius: 10px;
-  max-width: 320px;
-  max-height: 320px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+div#root {
+  height: 100%;
+  width: 100%;
+  max-height: 400px;
+  max-width: 400px;
+}
 
+main {
+  background-color: #F5F5F5;
+  height: 100%;
+  border-radius: 5px;
+  
 }
