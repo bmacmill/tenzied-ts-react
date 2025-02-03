@@ -1,12 +1,12 @@
 import React from "react"
 
 import './App.css'
-import Die from "./Die.jsx"
+import Die from "./Die"
 
 function App() {
   
   // initial dice state
-  const [dice, setDice] = React.useState(generatePlayingDice())
+  const [diceArray, setDiceArray] = React.useState(generatePlayingDice())
 
   
   // generate full array of 10 dice
@@ -16,19 +16,17 @@ function App() {
           .map(()=> Math.ceil(Math.random() * 6))
  }
   
-// generate 10 die elements on the page
- const gameDice = dice.map((num, i) => {
+// generate 10 die elements to put on the page
+ const diceElements = diceArray.map((num, i) => {
   return <Die key={i} number={num} />
 })
 
 
 
-  return (
-    
-   
+  return (   
       <main>
         <div className="Die-container">
-          {gameDice}
+          {diceElements}
         </div>
       </main>
 
