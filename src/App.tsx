@@ -18,14 +18,14 @@ function App() {
             return {
               num:  Math.ceil(Math.random() * 6),
               id: crypto.randomUUID(),
-              isHeld: false
+              isHeld: true
             }
           })
  }
   
 // generate 10 die elements to put on the page
  const diceElements = diceArray.map((el) => {
-  return <Die key={el.id} number={el.num} />
+  return <Die key={el.id} number={el.num} isHeld={el.isHeld}/>
 })
 
 function handleClick(){
