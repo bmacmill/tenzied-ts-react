@@ -18,18 +18,36 @@ function App() {
             return {
               num:  Math.ceil(Math.random() * 6),
               id: crypto.randomUUID(),
-              isHeld: true
+              isHeld: false
             }
           })
  }
 // hold dice
-function hold(id){
+function hold(id: string){
   console.log(id)
+  setDiceArray(prevDice => {
+    return prevDice.map(die => {
+      return die.id === id ? {...die, isHeld: !die.isHeld} : die
+  })
+
+  })
 }
 
+
+
+// function hold(id) {
+//   console.log(id)
+//   setDice(prevState => {
+//          return prevState.map(die => {
+//           return  die.id === id ? {...die, isHeld: !die.isHeld} : die
+//               })
+//   })
+// }
+
+
 // generate 10 die elements to put on the page
- const diceElements = diceArray.map((el) => {
-  return <Die key={el.id} number={el.num} isHeld={el.isHeld} hold={()=>hold(el.id)}/>
+ const diceElements = diceArray.map((el, index) => {
+  return <Die key={index} number={el.num} isHeld={el.isHeld} hold={()=>hold(el.id)}/>
 })
 
 
