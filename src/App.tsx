@@ -10,18 +10,26 @@ function App() {
 
   
   // generate full array of 10 dice
+  //added id adn is held property making die an object
  function generatePlayingDice(){
     return new Array(10)
           .fill(0)
-          .map(()=> Math.ceil(Math.random() * 6))
+          .map(()=> {
+            return {
+              num:  Math.ceil(Math.random() * 6),
+              id: crypto.randomUUID(),
+              isHeld: false
+            }
+          })
  }
   
 // generate 10 die elements to put on the page
- const diceElements = diceArray.map((num, i) => {
-  return <Die key={i} number={num} />
+ const diceElements = diceArray.map((el) => {
+  return <Die key={el.id} number={el.num} />
 })
 
 function handleClick(){
+  console.log(diceArray)
   setDiceArray(prevState => prevState = generatePlayingDice())
 }
 
