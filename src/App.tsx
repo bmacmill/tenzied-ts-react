@@ -22,11 +22,17 @@ function App() {
             }
           })
  }
-  
+// hold dice
+function hold(id){
+  console.log(id)
+}
+
 // generate 10 die elements to put on the page
  const diceElements = diceArray.map((el) => {
-  return <Die key={el.id} number={el.num} isHeld={el.isHeld}/>
+  return <Die key={el.id} number={el.num} isHeld={el.isHeld} hold={()=>hold(el.id)}/>
 })
+
+
 
 function handleClick(){
   console.log(diceArray)
