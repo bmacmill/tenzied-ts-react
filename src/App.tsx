@@ -35,7 +35,9 @@ function hold(id: string){
   })
 }
 
-
+//check if game is won
+const gameWon = diceArray.every(die => die.isHeld) &&
+diceArray.every(die => die.num === diceArray[0].num)
 
 // function hold(id) {
 //   console.log(id)
@@ -68,7 +70,9 @@ function handleClick(){
           {diceElements}
          </div>
      
-        <button className="Roll-btn" onClick={handleClick}>Roll</button>
+        <button className="Roll-btn" onClick={handleClick}>
+          {gameWon ? "Play Again" : "Roll"}
+          </button>
     
       </main>
 
