@@ -7,8 +7,13 @@ function App() {
   
   // initial dice state
   const [diceArray, setDiceArray] = React.useState(()=> generatePlayingDice())
- 
 
+ //not sure this works...
+// type Di = {
+//     num: number,
+//     id: string,
+//     isHeld: boolean
+//   }
   
   // generate full array of 10 dice
   //added id and is held property making die an object
@@ -25,8 +30,7 @@ function App() {
  }
 // hold dice 
 //note the double returns that always trips me up
-function hold(id: string){
-  console.log(id)
+function hold(id: string) {
   setDiceArray(prevDice => {
     return prevDice.map(die => {
       return die.id === id ? {...die, isHeld: !die.isHeld} : die
@@ -36,7 +40,7 @@ function hold(id: string){
 }
 
 //check if game is won
-const gameWon = diceArray.every(die => die.isHeld) &&
+const gameWon:boolean = diceArray.every(die => die.isHeld) &&
 diceArray.every(die => die.num === diceArray[0].num)
 
 // function hold(id) {
@@ -65,6 +69,7 @@ function handleClick(){
 
   return (   
       <main>
+        
         <Header />
         <div className="Die-container">
           {diceElements}
