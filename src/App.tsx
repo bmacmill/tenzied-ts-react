@@ -18,7 +18,7 @@ function App() {
   // generate full array of 10 dice
   //added id and is held property making die an object
  function generatePlayingDice(){
-    return new Array(10)
+    return new Array(2)
           .fill(0)
           .map(()=> {
             return {
@@ -61,9 +61,14 @@ diceArray.every(die => die.num === diceArray[0].num)
 
 
 function handleClick(){
-  setDiceArray(prevDice => prevDice.map((die)=>{
-    return die.isHeld ? die : {...die, num: Math.ceil(Math.random() * 6)}
-  })) 
+  if(gameWon){
+    setDiceArray(generatePlayingDice())
+  } else {
+    setDiceArray(prevDice => prevDice.map((die)=>{
+      return die.isHeld ? die : {...die, num: Math.ceil(Math.random() * 6)}
+    })) 
+  }
+  
 // setDice(generateAllNewDice())
 }
 
